@@ -30,17 +30,10 @@ public class Tile extends GameObject {
             g.drawImage(tile_T3,x,y,null);
         }
     }
-
     @Override
-    public void setx(int x) {
-
-    }
-
+    public void setx(int x) {    }
     @Override
-    public void sety(int y) {
-
-    }
-
+    public void sety(int y) {    }
     @Override
     public Rectangle getBounds() {
         hit=true;

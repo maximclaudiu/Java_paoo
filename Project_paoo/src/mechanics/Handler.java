@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 
 public class Handler{
+    private boolean gameover =false;
     private int lvl_nr=1;
     private KeyInput key;
     public int Gamescore=0;
@@ -23,6 +24,10 @@ public class Handler{
         this.addObject(new Ball(16,16,ID.Ball));
     }
     public void tick(){
+        if (gameover){
+            pause();
+            System.exit(1);
+        }
         if (object.size()==2)
         {
             if(lvl_nr<4){
@@ -51,10 +56,27 @@ public class Handler{
                 else if (key.right) tempObject.setvelX(5);
                 else tempObject.setvelX(0);
             }
+            if (tempObject.getID()==ID.Ball){
+                if (tempObject.getY()>720){
+                    gameover=true;
+                }
+            }
             tempObject.tick(object);
         }
     }
     public void render(Graphics g) {
+        if (gameover)
+        {
+            for (int i=0;i<object.size();i++) {
+                tempObject = object.get(i);
+                tempObject.destroyGameObject(this);
+            }
+            Graphics G= g;
+            G.setColor(Color.WHITE);
+            G.setFont(new Font("serif",Font.BOLD,35));
+            G.drawString("Game Over",400,300);
+            G.dispose();
+        }
         for (int i=0;i<object.size();i++)
         {
             tempObject = object.get(i);

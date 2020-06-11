@@ -21,9 +21,11 @@ public class Game extends Thread{
     BufferStrategy bs;
     ImageLoader loader = new ImageLoader();
     Graphics G;
+
     public Game () {
         wnd = new GameWindow( state);
     }
+    // Initializarea instantelor si a texturilor
     private void init() {
         Assets.Images.Init();
         input= new KeyInput();
@@ -43,7 +45,6 @@ public class Game extends Thread{
         }
         else { return; }
     }
-    // will make an exit button
     public synchronized void StopGame() {
         if(runState == true) {
              runState = false;
@@ -82,6 +83,7 @@ public class Game extends Thread{
             input.Update();
         }
     }
+    // Afiseaza fundalul sau meniul in functie de starea jocului
     private void Draw() {
         if (state==STATE.Game){
             bs = wnd.GetCanvas().getBufferStrategy();
@@ -105,6 +107,7 @@ public class Game extends Thread{
             menu=new MENU(state,G);
         }
     }
+    // Metoda statica pentru crearea instantei Game
     public static Game getInstance(){
         if (instance==null){
             instance = new Game();

@@ -15,6 +15,7 @@ public class GameWindow extends Canvas implements ActionListener{
     private JPanel panel;
     private JButton play;
     private JButton exit;
+    private JButton scores;
 
     public GameWindow ( STATE state)
     {
@@ -32,16 +33,18 @@ public class GameWindow extends Canvas implements ActionListener{
         wndFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         wndFrame.setVisible(true);
         wndFrame.setFocusable(true);
-
         if (state == STATE.Menu) {
             panel = new JPanel();
             play = new JButton("Play");
             exit =new JButton("Exit");
+            scores =new JButton("HighScores");
             play.addActionListener(this);
-            exit.addActionListener(x ->{System.exit(1);});
+            scores.addActionListener(this);
+            exit.addActionListener(x ->{System.exit(1);}); //Butonul de exit ne scoate din aplicatie
             panel.add(play);
+            panel.add(scores);
             panel.add(exit);
-            panel.setBorder(BorderFactory.createEmptyBorder(100, 400, 200, 400));
+            panel.setBorder(BorderFactory.createEmptyBorder(100, 400, 100, 400));
             panel.setLayout(new GridLayout(3, 1));
             wndFrame.add(panel, BorderLayout.CENTER);
             wndFrame.setVisible(true);
@@ -54,6 +57,8 @@ public class GameWindow extends Canvas implements ActionListener{
     public STATE setState (){
         return state;
     }
+
+    // Butonul de play da drumul la joc
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         panel.setVisible(false);
