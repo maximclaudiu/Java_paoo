@@ -9,25 +9,25 @@ import java.awt.image.BufferedImage;
 
 public class Game extends Thread{
 
+    private static Game instance =null;
     private boolean runState=false;
     private GameWindow wnd;
     private Thread thread;
     private BufferedImage background=null, level=null, shadow=null;
-    private STATE state ;
+    private STATE state = STATE.Menu;
     private Handler handler ;
     private KeyInput input;
     private MENU menu;
     BufferStrategy bs;
     ImageLoader loader = new ImageLoader();
     Graphics G;
-    public Game (String Title,int Width, int Height) {
-        wnd = new GameWindow(Width, Height,Title );
+    public Game () {
+        wnd = new GameWindow( state);
     }
     private void init() {
         Assets.Images.Init();
         input= new KeyInput();
         handler= new Handler(input);
-        state=STATE.Menu;
         wnd.BuildGameWindow();
         wnd.GetWndFrame().addKeyListener(input);
         background = loader.LoadImage("/textures/background.png");
@@ -56,7 +56,6 @@ public class Game extends Thread{
         }
         else { return; }
     }
-
     public void run() {
         init();
         StartGame();
@@ -78,36 +77,42 @@ public class Game extends Thread{
     private void Update(){
         if (state==STATE.Menu)
             state=wnd.setState();
-        if(state==STATE.Game){
+        if (state==STATE.Game) {
             handler.tick();
             input.Update();
         }
     }
     private void Draw() {
-        bs = wnd.GetCanvas().getBufferStrategy();
-        if (bs == null) {
-            try {
-                wnd.GetCanvas().createBufferStrategy(3);
-                return;
-            } catch (Exception e) {
-                e.printStackTrace();
+        if (state==STATE.Game){
+            bs = wnd.GetCanvas().getBufferStrategy();
+            if (bs == null) {
+                try {
+                    wnd.GetCanvas().createBufferStrategy(3);
+                    return;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        G =bs.getDrawGraphics() ;
-        int margin=30;
-        G.drawImage(background,0,0,null);
-        G.drawImage(shadow,margin,margin,wnd.GetWndWidth()-(margin*2),wnd.GetWndHeight()-(margin*2),null);
-        if (state==STATE.Game)
+            G =bs.getDrawGraphics() ;
+            int margin=30;
+            G.drawImage(background,0,0,null);
+            G.drawImage(shadow,margin,margin,wnd.GetWndWidth()-(margin*2)-10,wnd.GetWndHeight()-(margin*2)-20,null);
             handler.render(G);
-        else if(state==STATE.Menu){
+            G.dispose();
+            bs.show();
+        }
+        else if(state==STATE.Menu) {
             menu=new MENU(state,G);
         }
-        G.dispose();
-        bs.show();
     }
-
+    public static Game getInstance(){
+        if (instance==null){
+            instance = new Game();
+        }
+        return instance;
+    }
     public static void main(String[] args) {
-        Game paooGame = new Game("PaooGame", 1014, 720);
+        Game paooGame = Game.getInstance();
         paooGame.StartGame();
     }
 }

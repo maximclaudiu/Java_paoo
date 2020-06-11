@@ -7,24 +7,21 @@ import java.awt.event.ActionListener;
 
 public class GameWindow extends Canvas implements ActionListener{
     public JFrame  wndFrame;
-    private String  wndTitle;
-    private int     wndWidth;
-    private int     wndHeight;
+    private String  wndTitle = "Space Pong";
+    private int     wndWidth = 1014;
+    private int     wndHeight = 720;
     private STATE state;
     private Canvas  canvas;
     private JPanel panel;
-    private JButton button;
+    private JButton play;
+    private JButton exit;
 
-    public GameWindow (int Width, int Height, String Title)
+    public GameWindow ( STATE state)
     {
-        wndTitle    = Title;
-        wndWidth    = Width;
-        wndHeight   = Height;
         wndFrame    = null;
-        state=STATE.Menu;
+        this.state  = state;
     }
     public void BuildGameWindow()  {
-
         if (wndFrame != null) {
             return;
         }
@@ -35,14 +32,15 @@ public class GameWindow extends Canvas implements ActionListener{
         wndFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         wndFrame.setVisible(true);
         wndFrame.setFocusable(true);
-        canvas = new Canvas();
-        canvas.setPreferredSize(new Dimension(wndWidth, wndHeight));
-        wndFrame.add(canvas);
+
         if (state == STATE.Menu) {
             panel = new JPanel();
-            button = new JButton("play");
-            button.addActionListener(this);
-            panel.add(button);
+            play = new JButton("Play");
+            exit =new JButton("Exit");
+            play.addActionListener(this);
+            exit.addActionListener(x ->{System.exit(1);});
+            panel.add(play);
+            panel.add(exit);
             panel.setBorder(BorderFactory.createEmptyBorder(100, 400, 200, 400));
             panel.setLayout(new GridLayout(3, 1));
             wndFrame.add(panel, BorderLayout.CENTER);
@@ -58,7 +56,16 @@ public class GameWindow extends Canvas implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+        panel.setVisible(false);
         wndFrame.remove(panel);
         state=STATE.Game;
+        canvas = new Canvas();
+        canvas.setPreferredSize(new Dimension(wndWidth, wndHeight));
+        wndFrame.add(canvas);
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

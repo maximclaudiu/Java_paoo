@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class MENU {
     public MENU (STATE state, Graphics G){
-        if (state==STATE.Menu)
-            MenuRender(G);
+        if (state==STATE.Menu);
+          //  MenuRender(G);
     }
     public void MenuRender(Graphics g){
 
