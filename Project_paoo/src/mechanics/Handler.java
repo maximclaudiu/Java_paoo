@@ -2,7 +2,9 @@ package mechanics;
 
 import Assets.ImageLoader;
 import Controls.KeyInput;
+import Controls.MySQLite;
 import Objects.Ball;
+import Objects.GameObject;
 import Objects.Player;
 import Objects.Tile;
 
@@ -18,15 +20,18 @@ public class Handler{
     public LinkedList<GameObject> object = new LinkedList<GameObject>();
     private GameObject tempObject;
     private BufferedImage level;
-    public Handler (KeyInput key){
+    private MySQLite DB;
+    public Handler (KeyInput key, MySQLite DB){
         this.key=key;
         this.addObject(new Player(150,22,ID.Player));
         this.addObject(new Ball(16,16,ID.Ball));
+        this.DB = DB;
     }
     public void tick() {
         if (gameover) {
             pause();
             System.exit(1);
+            DB.Update(Gamescore);
         }
         if (object.size()==2)
         {

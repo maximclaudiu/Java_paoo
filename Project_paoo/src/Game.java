@@ -1,6 +1,7 @@
 import Assets.*;
 import Controls.KeyInput;
-import Objects.MENU;
+import Controls.MySQLite;
+import mechanics.MENU;
 import mechanics.*;
 
 import java.awt.*;
@@ -18,18 +19,20 @@ public class Game extends Thread{
     private Handler handler ;
     private KeyInput input;
     private MENU menu;
+    private MySQLite DB;
     BufferStrategy bs;
     ImageLoader loader = new ImageLoader();
     Graphics G;
 
     public Game () {
-        wnd = new GameWindow( state);
+        wnd = new GameWindow(state);
     }
     // Initializarea instantelor si a texturilor
     private void init() {
+        DB =new MySQLite();
         Assets.Images.Init();
         input= new KeyInput();
-        handler= new Handler(input);
+        handler= new Handler(input, DB);
         wnd.BuildGameWindow();
         wnd.GetWndFrame().addKeyListener(input);
         background = loader.LoadImage("/textures/background.png");

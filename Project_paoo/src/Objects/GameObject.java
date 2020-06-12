@@ -1,4 +1,7 @@
-package mechanics;
+package Objects;
+
+import mechanics.Handler;
+import mechanics.ID;
 
 import java.util.Random;
 import java.awt.*;

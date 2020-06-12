@@ -1,4 +1,4 @@
-package Objects;
+package mechanics;
 
 import mechanics.STATE;
 

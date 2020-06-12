@@ -1,6 +1,5 @@
 package Objects;
 
-import mechanics.GameObject;
 import mechanics.ID;
 
 import java.awt.*;

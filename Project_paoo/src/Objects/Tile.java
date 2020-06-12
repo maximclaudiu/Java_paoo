@@ -1,5 +1,4 @@
 package Objects;
-import mechanics.GameObject;
 import mechanics.Handler;
 import mechanics.ID;
 
