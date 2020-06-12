@@ -15,8 +15,5 @@ public class SpriteSheet
     {
          return spriteSheet.getSubimage((int)(x * width), (int)(y * height), width, height);
     }
-
-
-
 }
 

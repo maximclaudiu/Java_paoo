@@ -110,6 +110,7 @@ public class Ball extends GameObject {
     public void sety(int y){
         this.y=y;
     }
+    // Creeaza un hitbox al actorului
     public Rectangle getBounds() {
         return new Rectangle(x,y,26,26);
        }

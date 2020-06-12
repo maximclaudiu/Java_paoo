@@ -75,7 +75,7 @@ public class Game extends Thread{
             }
         }
     }
-    private void Update(){
+    private void Update() {
         if (state==STATE.Menu)
             state=wnd.setState();
         if (state==STATE.Game) {

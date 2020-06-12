@@ -35,6 +35,7 @@ public class GameWindow extends Canvas implements ActionListener{
         wndFrame.setFocusable(true);
         if (state == STATE.Menu) {
             panel = new JPanel();
+            // Butoanele din meniu
             play = new JButton("Play");
             exit =new JButton("Exit");
             scores =new JButton("HighScores");

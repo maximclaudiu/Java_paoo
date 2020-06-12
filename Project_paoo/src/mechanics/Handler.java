@@ -23,14 +23,14 @@ public class Handler{
         this.addObject(new Player(150,22,ID.Player));
         this.addObject(new Ball(16,16,ID.Ball));
     }
-    public void tick(){
-        if (gameover){
+    public void tick() {
+        if (gameover) {
             pause();
             System.exit(1);
         }
         if (object.size()==2)
         {
-            if(lvl_nr<4){
+            if(lvl_nr<4) {
                 lvl_nr++;
                 pause();
             }
@@ -65,7 +65,7 @@ public class Handler{
         }
     }
     public void render(Graphics g) {
-        if (gameover)
+        if (gameover) //Testarea si afisarea mesajului de final de joc.
         {
             for (int i=0;i<object.size();i++) {
                 tempObject = object.get(i);
@@ -77,12 +77,13 @@ public class Handler{
             G.drawString("Game Over",400,300);
             G.dispose();
         }
+        // Afiseaza pe rand pe ecran toate obiectele din lista
         for (int i=0;i<object.size();i++)
         {
             tempObject = object.get(i);
             tempObject.render(g,tempObject);
         }
-        if(object.size()==2) {
+        if(object.size()==2) { // Testarea si afisarea mesajului de nivel complet.
             if (lvl_nr<4) {
                 Graphics G= g;
                 G.setColor(Color.WHITE);
@@ -90,7 +91,7 @@ public class Handler{
                 G.drawString("Nivel Complet",400,300);
                 G.dispose();
             }
-            else {
+            else { //Testarea si afisarea mesajului de joc castigat.
                 Graphics G= g;
                 G.setColor(Color.WHITE);
                 G.setFont(new Font("serif",Font.BOLD,35));
@@ -98,6 +99,7 @@ public class Handler{
                 G.dispose();
             }
         }
+        // Afiseaza Score-ul jocului
         Graphics2D G= (Graphics2D)g;
         G.setColor(Color.WHITE);
         G.setFont(new Font("serif",Font.BOLD,25));
@@ -105,9 +107,15 @@ public class Handler{
         G.dispose();
     }
     public void LoadTextures(BufferedImage level){
+        // Incarcarea pozei nivelului curent.
         this.level=level;
         int w= level.getWidth();
         int h= level.getHeight();
+        // Pentru fiecare pixel din imagine, in functie de valorile RGB ale acestuia, se va crea o instanta de Tile
+        //      cu valori diferite ale punctelor de viata:
+        //          Albastru 1
+        //          Rosu     2
+        //          Galben   3
         for (int i=0;i<w;i++){
             for (int j=0;j<h;j++){
                 int pixel=level.getRGB(i,j);
@@ -120,6 +128,8 @@ public class Handler{
             }
         }
     }
+    // Opreste temporar firul de executie pentru a da timp jucatorului sa citeasca diferitele mesaje
+    //      ce apar pe ecran, in functie de ce conditii se indeplinesc
     public void pause(){
         try {
             Thread.sleep(4000);
@@ -127,6 +137,7 @@ public class Handler{
             e.printStackTrace();
         }
     }
+    // Adauga o instanta (Tile, Player sau Ball) la lista de GameObject-uri
     public void addObject (GameObject obj){
         this.object.add(obj);
     }

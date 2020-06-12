@@ -18,6 +18,10 @@ public class Tile extends GameObject {
         handler=h;
     }
     public void tick(LinkedList<GameObject> object) {   }
+    // Afiseaza pe tabla de joc tile-ul de culoarea corespunzatoare punctelor de viata:
+    //          Albastru 1
+    //          Rosu     2
+    //          Galben   3
     @Override
     public void render(Graphics g, GameObject obj) {
         if (hp==1) {
@@ -34,11 +38,14 @@ public class Tile extends GameObject {
     public void setx(int x) {    }
     @Override
     public void sety(int y) {    }
+    // Creeaza un hitbox al actorului
     @Override
     public Rectangle getBounds() {
         hit=true;
         return new Rectangle(x,y,100,50);
     }
+    // In urma coliziunii cu mingea de joc, punctele de viata ale actorilor Tile va scadea cu 1 si jucatorul
+    //      va primi puncte de scor, pana cand punctele de viata ajung la 0, iar actorul este distrus.
     public void GetHit() {
         if (hit == true) {
             if (hp == 3) {

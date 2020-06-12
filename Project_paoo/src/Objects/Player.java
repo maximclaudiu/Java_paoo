@@ -37,6 +37,7 @@ public class Player extends GameObject {
     public void sety(int y) { this.y=y; }
     @Override
     public void GetHit() {    }
+    // Creeaza un hitbox al actorului
     @Override
     public Rectangle getBounds(){
         return new Rectangle(x,y,150,22);
