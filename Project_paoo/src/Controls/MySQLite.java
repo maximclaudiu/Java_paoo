@@ -9,7 +9,7 @@ public class MySQLite {
     public MySQLite() {
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:PongGame.db");
+            c = DriverManager.getConnection("jdbc:sqlite:SpaceGame.db");
         } catch (Exception e) {
             System.out.println(e);
         }

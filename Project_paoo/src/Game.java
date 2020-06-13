@@ -14,7 +14,7 @@ public class Game extends Thread{
     private boolean runState=false;
     private GameWindow wnd;
     private Thread thread;
-    private BufferedImage background=null, level=null, shadow=null;
+    private BufferedImage background=null, level=null;
     private STATE state = STATE.Menu;
     private Handler handler ;
     private KeyInput input;
@@ -36,7 +36,6 @@ public class Game extends Thread{
         wnd.BuildGameWindow(handler);
         wnd.GetWndFrame().addKeyListener(input);
         background = loader.LoadImage("/textures/background.png");
-        shadow =loader.LoadImage("/textures/shadow.png");
         level =loader.LoadImage("/textures/maps/map_1.png");
         handler.LoadTextures(level);
     }
@@ -99,9 +98,7 @@ public class Game extends Thread{
                 }
             }
             G =bs.getDrawGraphics() ;
-            int margin=30;
             G.drawImage(background,0,0,null);
-            G.drawImage(shadow,margin,margin,wnd.GetWndWidth()-(margin*2)-10,wnd.GetWndHeight()-(margin*2)-20,null);
             handler.render(G);
             G.dispose();
             bs.show();

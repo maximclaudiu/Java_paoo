@@ -108,7 +108,7 @@ public class Handler{
         Graphics2D G= (Graphics2D)g;
         G.setColor(Color.WHITE);
         G.setFont(new Font("serif",Font.BOLD,25));
-        G.drawString("Score:"+Gamescore,850,25);
+        G.drawString("Score:"+Gamescore,850,20);
         G.dispose();
     }
     public void LoadTextures(BufferedImage level){

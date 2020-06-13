@@ -17,9 +17,9 @@ public class Ball extends GameObject {
     // Teste pentru pozitia bilei de joc
     @Override
     public void tick(LinkedList<GameObject> object) {
-        if (x<30) { // Test coliziune margine stanga.
+        if (x<40) { // Test coliziune margine stanga.
             setvelX(0-getvelX());
-            x=30;
+            x=40;
         }
         else if (x >955) { // Test coliziune margine dreapta.
             setvelX(0-getvelX());
@@ -27,9 +27,9 @@ public class Ball extends GameObject {
         }
         else x = x +velX;
 
-        if (y<30) { // Test coliziune margine sus.
+        if (y<33) { // Test coliziune margine sus.
             setvelY(0-getvelY());
-            y=30;
+            y=33;
         }
         else y = y +velY;
         Collision(object);

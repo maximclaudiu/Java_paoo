@@ -10,8 +10,8 @@ import java.sql.SQLException;
 
 public class GameWindow extends Canvas implements ActionListener{
     public JFrame  wndFrame;
-    private String  wndTitle = "Space Pong";
-    private int     wndWidth = 1014;
+    private String  wndTitle = "Space Blocks";
+    private int     wndWidth = 1024;
     private int     wndHeight = 720;
     private STATE state;
     private Canvas  canvas;
@@ -47,7 +47,9 @@ public class GameWindow extends Canvas implements ActionListener{
         wndFrame.setFocusable(true);
         if (state == STATE.Menu) {
             panel1 = new JPanel();
+            panel1.setBackground(Color.GRAY);
             panel2 = new JPanel();
+            panel2.setBackground(Color.GRAY);
             mainpanel = new JPanel();
             mainpanel.setLayout(new BoxLayout(mainpanel, BoxLayout.X_AXIS));
             panel1.setLayout(new GridLayout(5, 1));
