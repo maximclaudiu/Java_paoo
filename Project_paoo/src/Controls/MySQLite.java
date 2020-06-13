@@ -1,4 +1,5 @@
 package Controls;
+import java.awt.*;
 import java.sql.*;
 
 public class MySQLite {
@@ -13,17 +14,26 @@ public class MySQLite {
             System.out.println(e);
         }
     }
-    public void List(){
+    public ResultSet Generate_scores (String abc){
+        // abc reprezinta comentarii suplimentare ce pot fi adaugate la comenzile Query pentru a ordona lista ce va fi afisata.
+        //      ORDER BY * ASC/DESC
+        ResultSet rs= null;
         try {
-            query="SELECT Score FROM HighScores ORDER BY Score DESC";
+            query = "SELECT Score FROM HighScores " + abc;
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            while(rs.next()) {
-                System.out.println(rs.getInt("Score"));
-            }
-        } catch (SQLException e) {
+            rs = stmt.executeQuery(query);
+            return rs;
         }
-
+        catch (SQLException e) { }
+        return rs;
+    }
+    public void List(){
+        ResultSet rs= this.Generate_scores("");
+        try {
+          while (rs.next()) {
+              System.out.println(rs.getInt("Score"));
+          }
+        }catch(SQLException e){ }
     }
     public void Update (int x){
         int min=4000000;
@@ -39,8 +49,8 @@ public class MySQLite {
             if(min<x) {
                 rs = stmt.executeQuery(query);
                 while (rs.next()) {
-                    if (rs.getInt("Score")==min){
-                        query="UPDATE HighScores Set Score="+x+" WHERE Score IN( SELECT Score FROM HighScores WHERE Score="+min+" LIMIT 1)";
+                    if (rs.getInt("Score")==min) {
+                        query="UPDATE HighScores Set Score="+x+" WHERE rowid= (SELECT MIN(rowid) FROM HighScores WHERE Score ="+min+")";
                     }
                 }
                 rs = stmt.executeQuery(query);
@@ -56,11 +66,5 @@ public class MySQLite {
             e.printStackTrace();
         }
     }
-    public static void main(String[] args){
-        MySQLite db = new MySQLite();
-        db.List();
-        db.Update(5000);
-        db.List();
-        db.closeConnection();
-    }
+
 }

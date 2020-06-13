@@ -2,27 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14f3b0f2-3f13-4ba9-a41e-e84e0ea2fb45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_30_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PongGame.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controls/MySQLite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_paoo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_paoo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/Assets/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_paoo/Assets/Images.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PongGame.db" beforeDir="false" afterPath="$PROJECT_DIR$/PongGame.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PongGame.db-journal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/Controls/MySQLite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_paoo/Controls/MySQLite.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_paoo/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_paoo/GameWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/Objects/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_paoo/Objects/Ball.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/Objects/MENU.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/Objects/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_paoo/Objects/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/Objects/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_paoo/Objects/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/mechanics/GameObject.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/mechanics/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_paoo/mechanics/Handler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_paoo/textures/tiles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/MySQLite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/MySQLite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/MENU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanics/MENU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mechanics/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mechanics/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanics/Handler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,12 +61,19 @@
       <recent name="C:\Users\Tsunamy\IdeaProjects\Project_paoo\res" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.test DB">
+  <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Game" />
       <module name="Project_paoo" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="butoane" />
+      <module name="Project_paoo" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -91,6 +87,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.test DB" />
+      <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.Game" />
     </list>
     <recent_temporary>
@@ -120,14 +117,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="246" y="195" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1591956241579" />
+    <state x="815" y="190" key="#Unnamed" timestamp="1592038025822">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="815" y="190" key="#Unnamed/0.0.1920.1040@0.0.1920.1040" timestamp="1592038025822" />
     <state x="217" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1590654932685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="217" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590654932685" />
-    <state x="535" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591962962048">
+    <state x="535" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592037641798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="535" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591962962048" />
+    <state x="535" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592037641798" />
     <state x="1175" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591956601202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -136,14 +137,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="599" y="207" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589558549641" />
-    <state x="1200" y="233" key="#com.intellij.ide.util.MemberChooser" timestamp="1590656654948">
+    <state x="1200" y="233" key="#com.intellij.ide.util.MemberChooser" timestamp="1592032538224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1200" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590656654948" />
-    <state x="810" y="311" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591962959213">
+    <state x="1200" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592032538224" />
+    <state x="810" y="311" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592037640759">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="810" y="311" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591962959213" />
+    <state x="810" y="311" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592037640759" />
     <state x="1125" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590653231570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -152,38 +153,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591956227873" />
-    <state width="1317" height="255" key="GridCell.Tab.0.bottom" timestamp="1591969022968">
+    <state width="1585" height="203" key="GridCell.Tab.0.bottom" timestamp="1592041496033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="96" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1589457525265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="96" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1920.1040@0.0.1920.1040" timestamp="1589457525265" />
-    <state width="1317" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591969022968" />
-    <state width="1317" height="255" key="GridCell.Tab.0.center" timestamp="1591969022968">
+    <state width="1585" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592041496033" />
+    <state width="1585" height="203" key="GridCell.Tab.0.center" timestamp="1592041496033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="96" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1589457525265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="96" key="GridCell.Tab.0.center.inPresentationMode/0.0.1920.1040@0.0.1920.1040" timestamp="1589457525265" />
-    <state width="1317" height="255" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591969022968" />
-    <state width="1317" height="255" key="GridCell.Tab.0.left" timestamp="1591969022968">
+    <state width="1585" height="203" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592041496033" />
+    <state width="1585" height="203" key="GridCell.Tab.0.left" timestamp="1592041496033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="96" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1589457525265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="96" key="GridCell.Tab.0.left.inPresentationMode/0.0.1920.1040@0.0.1920.1040" timestamp="1589457525265" />
-    <state width="1317" height="255" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591969022968" />
-    <state width="1317" height="255" key="GridCell.Tab.0.right" timestamp="1591969022968">
+    <state width="1585" height="203" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592041496033" />
+    <state width="1585" height="203" key="GridCell.Tab.0.right" timestamp="1592041496033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="96" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1589457525265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="96" key="GridCell.Tab.0.right.inPresentationMode/0.0.1920.1040@0.0.1920.1040" timestamp="1589457525265" />
-    <state width="1317" height="255" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591969022968" />
+    <state width="1585" height="203" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592041496033" />
     <state width="914" height="346" key="GridCell.Tab.1.bottom" timestamp="1590180357078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

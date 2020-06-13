@@ -20,7 +20,7 @@ public class Handler{
     public LinkedList<GameObject> object = new LinkedList<GameObject>();
     private GameObject tempObject;
     private BufferedImage level;
-    private MySQLite DB;
+    public MySQLite DB;
     public Handler (KeyInput key, MySQLite DB){
         this.key=key;
         this.addObject(new Player(150,22,ID.Player));
@@ -30,8 +30,8 @@ public class Handler{
     public void tick() {
         if (gameover) {
             pause();
-            System.exit(1);
             DB.Update(Gamescore);
+            System.exit(1);
         }
         if (object.size()==2)
         {

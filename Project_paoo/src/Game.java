@@ -33,7 +33,7 @@ public class Game extends Thread{
         Assets.Images.Init();
         input= new KeyInput();
         handler= new Handler(input, DB);
-        wnd.BuildGameWindow();
+        wnd.BuildGameWindow(handler);
         wnd.GetWndFrame().addKeyListener(input);
         background = loader.LoadImage("/textures/background.png");
         shadow =loader.LoadImage("/textures/shadow.png");
