@@ -14,7 +14,7 @@ import java.util.LinkedList;
 
 public class Handler{
     private boolean gameover =false;
-    private int lvl_nr=1;
+    private int lvl_nr=2;
     private KeyInput key;
     public int Gamescore=0;
     public LinkedList<GameObject> object = new LinkedList<GameObject>();

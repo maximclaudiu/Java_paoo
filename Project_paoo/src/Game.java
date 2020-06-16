@@ -36,7 +36,7 @@ public class Game extends Thread{
         wnd.BuildGameWindow(handler);
         wnd.GetWndFrame().addKeyListener(input);
         background = loader.LoadImage("/textures/background.png");
-        level =loader.LoadImage("/textures/maps/map_1.png");
+        level =loader.LoadImage("/textures/maps/map_2.png");
         handler.LoadTextures(level);
     }
     public synchronized void StartGame() {

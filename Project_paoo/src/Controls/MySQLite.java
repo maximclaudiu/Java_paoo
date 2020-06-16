@@ -1,5 +1,4 @@
 package Controls;
-import java.awt.*;
 import java.sql.*;
 
 public class MySQLite {
@@ -20,6 +19,7 @@ public class MySQLite {
         ResultSet rs= null;
         try {
             query = "SELECT Score FROM HighScores " + abc;
+
             stmt = c.createStatement();
             rs = stmt.executeQuery(query);
             return rs;

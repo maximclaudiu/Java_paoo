@@ -62,7 +62,7 @@ public class GameWindow extends Canvas implements ActionListener{
             exit =new JButton("Exit");
             space = new JButton("");
             String string="<html>HighScores<br>";
-            ResultSet rs =handler.DB.Generate_scores("ORDER BY Score DESC");
+            ResultSet rs = handler.DB.Generate_scores("ORDER BY Score DESC");
             try {
                 int i=1;
                 while(rs.next()){
